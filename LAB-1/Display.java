@@ -35,7 +35,7 @@ public class Display{
              prog=in.nextLine();
              System.out.println("Enter Your School name:");
              school=in.next();
-             system.out.println("Enter Your Proctor name:");
+             System.out.println("Enter Your Proctor name:");
              p_name=in.next();
              
            //Display User Details
