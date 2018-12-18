@@ -12,7 +12,7 @@ import java.util.*;
 public class CourseSelect {
         
           public static void main(String [] args){
-              Scanner in=new Scanner(System.in);
+              
               
               //declaring the 2-D Array
               String Course[][]={{"ITA1001","ITA1002","ITA1003","ITA1004","ITA1005","ITA1006"},
@@ -31,15 +31,14 @@ public class CourseSelect {
                
                //Finding the Occurance of the row for Input Course
                for(int s=0;s<SelectedCourses;s++){
-                   FinalCourse[s]=args[s]; // Add  Input to Result
+                  FinalCourse[s]=args[s]; // Add  Input to Result
                  for(int i=0;i<6;i++)
                  {
                     for(int j=0;j<6;j++)
                     {
-                       if(args[s]==Course[i][j])
-                       {
+                       if(FinalCourse[s].equals(Course[i][j]))
+                       { 
                          SelectedRow[s]=i;
-                         break;
                         }
                     }
                     }  
@@ -107,6 +106,7 @@ public class CourseSelect {
             for(String course:FinalCourse){
             System.out.println(course);
             }
+        
             
 }        
         //Calculation Of Random Number
@@ -118,4 +118,3 @@ public class CourseSelect {
                 return g;
 }         
 }
-
