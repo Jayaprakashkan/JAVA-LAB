@@ -8,19 +8,19 @@ import java.io.*;
 import java.util.*;
 class BankDeposit {
     
-            //declaring Variables
-            String NameOfHolder;
-            Long AccountNumber;
-            String AccountType;
-            int  Balance;
+            //declaring private Variables
+            private String NameOfHolder;
+            private Long AccountNumber;
+            private String AccountType;
+            private int  Balance;
             
             //Initializing the values
-            public void ToAssingInitialValues(String name,Long ACNum,String ACType,int Bal)
+            public void ToAssingInitialValues(String NameOfHolder,Long AccountNumber,String AccountType,int Balance)
             {
-              NameOfHolder=name;
-              AccountNumber=ACNum;
-              AccountType=ACType;
-              Balance=Bal;
+              this.NameOfHolder=NameOfHolder;
+              this.AccountNumber=AccountNumber;
+              this.AccountType=AccountType;
+              this.Balance=Balance;
             }
             
             //Deposit 
