@@ -10,55 +10,54 @@ import java.util.*;
 
  class Author {
     
-      //Creating object for Scanner
-      Scanner in=new Scanner(System.in);
-      
-      //Fields
-      String FirstName;
-      String LastName;
+      //Fields with private scope
+     private String FirstName;
+     private String LastName;
       
       
     //set first name
-    public void setFirstName(String Fname)
+    public void setFirstName(String FirstName)
     {
-        FirstName=Fname;
+        this.FirstName=FirstName;
     }
     
     //set last name
-    public void setLastName(String Lname)
+    public void setLastName(String LastName)
     {
-        LastName=Lname;
+        this.LastName=LastName;
     }
     
-    //Getting the First name from user
+    //Getting the First name 
     public String getFirstName()
     {   
-        System.out.print("Enter the Author's First Name: ");
-        String Fname=in.next();
-        return Fname;  //return the first name
+       
+        return FirstName;  //return the first name
     }
     
-    //Getting the Last name from user
+    //Getting the Last Name
     public String getLastName()
     {
-        System.out.print("Enter the Author's Last Name: ");
-        String Lname=in.next();
-        return Lname;   //return the last name
+        
+        return LastName;   //return the last name
     }    
 }
 
 public class TestAuthor
 {
     public static void main(String [] args)
-    {
+    {  
+        //Creating object for Scanner
+        Scanner in=new Scanner(System.in);
         Author obj=new Author();   //object for Author class
-        String name1 = obj.getFirstName();  
-        String name2 = obj.getLastName();
-        obj.setFirstName(name1);   //passing the first name to setFirstName
-        obj.setLastName(name2);    //passing the last name to setLastName
+        System.out.println("Enter the First Name of the Author:");
+        String fname=in.next();
+        System.out.println("Enter the Last Name of the Author:");
+        String lname=in.next();
+        obj.setFirstName(fname);   //passing the first name to setFirstName
+        obj.setLastName(lname);    //passing the last name to setLastName
          
         //checking the class and object by printing the Author's name
-        System.out.println("Author Name is: "+obj.FirstName+" "+obj.LastName); 
+        System.out.println("Author Name is: "+obj.getFirstName()+" "+obj.getLastName()); 
     }
 }
 
