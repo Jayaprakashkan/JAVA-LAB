@@ -1,4 +1,9 @@
-
+/**
+ * LAB EXPRIMENT 1
+ * Calculating BMI
+ * @author K.JAYAPRAKASH
+ * @07-01-2019
+ */
 
 
 import java.io.*;
