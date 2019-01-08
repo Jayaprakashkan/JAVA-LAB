@@ -37,7 +37,7 @@ public class ChemicalReaction {
        cheq=cheq.replaceAll("\\s", "");
        
        //create HashMap for store mole and compenent pair
-       HashMap<Integer,String> map=new HashMap<Integer,String>();
+       HashMap<String,Integer> map=new HashMap<String,Integer>();
        
        //split the string by + 
        String []compenent=cheq.split("[+]");
@@ -48,22 +48,22 @@ public class ChemicalReaction {
            char first=com.charAt(0);
            if(Character.isDigit(first))
            {
-               map.put(Integer.parseInt(String.valueOf(first)),com.substring(1));
+               map.put(com.substring(1),Integer.parseInt(String.valueOf(first)));
                
             }
             
             else
             {
-                map.put(1,com);
+                map.put(com,1);
             
             }
         
         }
         
         //display each compenent with moles
-        for(int mole:map.keySet())
+        for(String cmpnt:map.keySet())
         {
-           System.out.println(mole+" moles of "+map.get(mole));
+           System.out.println(map.get(cmpnt)+" moles of "+cmpnt);
         }
         
     }
