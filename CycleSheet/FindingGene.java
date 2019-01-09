@@ -17,13 +17,14 @@ public class FindingGene {
        System.out.println("Enter a genome string:");
        String dna=in.nextLine();
        
+       List<String> dnaresult=new ArrayList<String>();
        FindingGene obj=new FindingGene();
        //find the first occurance of ATG (starting codon)
        int startindex=dna.indexOf("ATG");
        //if DNA Not contain Statring codon.. then no gene
        if(startindex==-1)
        {
-        System.out.println("This DNA does not contain any gene ");
+        System.out.println("no gene ");
         }
         
         //DNA contain Starting codon find gene
@@ -38,9 +39,30 @@ public class FindingGene {
                 }
         
                String rdna=obj.findGene(dna,startindex);
-               System.out.println(rdna);
-               startindex=dna.indexOf("ATG",startindex+rdna.length());
+               if(rdna==null)
+               {
+                   break;
+                }
+               //check the length of the gene
+               if(rdna!=null&&rdna.length()%3==0)
+               {
+                   dnaresult.add(rdna);
+                   startindex=dna.indexOf("ATG",startindex+rdna.length());
+               }
+               
             }
+            
+             if(dnaresult.isEmpty())
+             {
+                System.out.println("no gene");
+               }
+             else
+             {
+                for(String gene:dnaresult)
+                {
+                  System.out.println(gene);
+                }
+              }
         }
     }
     
@@ -70,7 +92,7 @@ public class FindingGene {
         }
         if(minimumindex==-1)
         {
-           return "";
+           return null;
         }
         
         //find gene
